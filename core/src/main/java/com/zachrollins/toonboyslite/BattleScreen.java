@@ -479,6 +479,10 @@ public abstract class BattleScreen implements Screen {
     // assign music before showing
     public void setBackgroundMusic(Music music) {
         this.backgroundMusic = music;
+        if (this.backgroundMusic != null) {
+            this.backgroundMusic.setLooping(true);
+            this.backgroundMusic.setVolume(MuteManager.isMuted() ? 0f : 1f);
+        }
     }
 
     @Override public void resize(int w, int h) { uiStage.getViewport().update(w, h, true); }

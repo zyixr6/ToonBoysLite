@@ -15,10 +15,8 @@ public class MuteManager {
     // toggles mute and adjusts music volume
     public static void toggleMute(Music music) {
         isMuted = !isMuted;
-        if (isMuted) {
-            music.setVolume(0);
-        } else {
-            music.setVolume(1);
+        if (music != null) {
+            music.setVolume(isMuted ? 0 : 1);
         }
     }
 }

@@ -23,6 +23,10 @@ public class FinalBattleScreen extends BattleScreen {
         battleHorn = Gdx.audio.newMusic(Gdx.files.internal("sfx/battle-horn.mp3"));
         thunderSfx = Gdx.audio.newMusic(Gdx.files.internal("sfx/thunder.mp3"));
         battleMusic = Gdx.audio.newMusic(Gdx.files.internal("music/final-stage.mp3"));
+
+        battleHorn.setVolume(MuteManager.isMuted() ? 0f : 1f);
+        thunderSfx.setVolume(MuteManager.isMuted() ? 0f : 1f);
+        battleMusic.setVolume(MuteManager.isMuted() ? 0f : 1f);
     }
 
     @Override
